@@ -14,7 +14,7 @@ COPY . .
 EXPOSE 8080
 
 #running commands
-CMD [ "node", "index" ]afdf
+CMD [ "node", "index" ]
 
 
 # docker build -t api .   to run this project on docker run this command in terminal asfdjf
