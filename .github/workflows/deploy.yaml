@@ -16,9 +16,10 @@ jobs:
       - name: Deploy Via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.SSH_HOST }}
+          host: ${{ secrets.SSH_HOST }} #the ip of server is stored in github repo secrets so no one can directly access and we cannot put that in .env file bcz on github it is accessible to every one.
           username: ubuntu
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY }} #we create this private ssh key and store that in github repo secrets and ubuntu server.
+          #cd to place where we want to clone our project
           script: |
             cd /home/ubuntu/project-git/nodejs-application-deploy-github-actions
             git pull
