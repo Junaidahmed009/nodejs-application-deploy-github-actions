@@ -20,8 +20,10 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_KEY }} #we create this private ssh key and store that in github repo secrets and ubuntu server.
           #cd to place where we want to clone our project
+          #make sure to pick public key and putit in server and private key in github ssecrets.
           script: |
             cd /home/ubuntu/project-git/nodejs-application-deploy-github-actions
             git pull
             docker compose up -d --build
 
+#when you push this file to github, the github actions file will run atomatically.
